@@ -1,0 +1,35 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        f = "qwertyuiop"; s = "asdfghjkl"; t = "zxcvbnm"
+        final = []
+        for word in words:
+            length = len(word)
+            temp = 0
+            for letter in word:
+                if(letter.lower() not in s):
+                    break
+                else:
+                    temp += 1
+            if(temp == length):
+                final.append(word)
+        for word in words:
+            length = len(word)
+            temp = 0
+            for letter in word:
+                if(letter.lower() not in f):
+                    break
+                else:
+                    temp += 1
+            if(temp == length):
+                final.append(word)
+        for word in words:
+            length = len(word)
+            temp = 0
+            for letter in word:
+                if(letter.lower() not in t):
+                    break
+                else:
+                    temp += 1
+            if(temp == length):
+                final.append(word)
+        return final
