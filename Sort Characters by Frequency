@@ -1,0 +1,12 @@
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        temp = []; times = []; final = ""
+        for x in s:
+            if x not in times:
+                temp.append([s.count(x), x])
+                times.append(x)
+        temp.sort(reverse = True)
+        for x, y in temp:
+            for a in range(x):
+                final += y
+        return final
